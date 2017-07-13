@@ -1,0 +1,6 @@
+{
+    "require": {
+        "facebook/graph-sdk": "^5.5",
+        "dibi/dibi": "^3.0"
+    }
+}
