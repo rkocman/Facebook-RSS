@@ -21,14 +21,14 @@ The installation process follows:
 4. Upload the app on the server
 5. Run the app and log in as an admin
 6. Initialize the database for regular users
-7. Try to create a user account to check if the FB authentication process is correctly set. 
+7. Try to create a user account to check if the FB authentication process is correctly set
 8. ?
 9. PROFIT!
 
 
 ## User Guide
 
-Just follow instructions in the app: First, sign up with some name and password. Second, connect your account with your Facebook. Now you can go see the list of liked pages or generate the RSS feed.
+Just follow instructions in the app: First, sign up with some name and password. Second, connect your account with your Facebook. Now you can generate the RSS feed or check the list of liked pages.
 
 To access the RSS feed directly just use its URL and appropriate login details.
 
