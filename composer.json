@@ -1,6 +1,13 @@
 {
+    "config": {
+        "platform": {
+            "php": "5.4.45"
+        }
+    },
     "require": {
         "facebook/graph-sdk": "^5.5",
-        "dibi/dibi": "^3.0"
+        "dibi/dibi": "^3.0",
+        "tracy/tracy": "^2.5",
+        "nette/robot-loader": "^2.3"
     }
 }

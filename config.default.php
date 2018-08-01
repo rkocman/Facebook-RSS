@@ -46,13 +46,13 @@ class FacebookConfig
  */
 class AppConfig
 {
+  // Developer mode (shows full details of errors).
+  const devel = false;
+
   // Maximum number of posts taken from each Facebook page.
   const maxPageItems = 10;
   // Maximum number of returned RSS items.
   const maxItems = 200;
-  
-  // Developer mode (shows full details of errors).
-  const devel = false;
   
   // This can remove emoji icons from the content for compatibility reasons.
   const removeEmoji = false;
