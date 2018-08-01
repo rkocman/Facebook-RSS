@@ -8,6 +8,7 @@
 namespace FacebookRSS\Utils;
 
 use FacebookRSS;
+use FacebookRSS\AppConfig;
 
 /**
  * Session handler.
@@ -29,10 +30,18 @@ class Sessions
   public static function init()
   {
     session_start();
+
+    if (!isset($_SESSION[AppConfig::sessionName])) {
+      $_SESSION[AppConfig::sessionName] = [
+        'user' => self::resetUser(),
+        'admin' => self::resetAdmin(),
+        'logout' => false
+      ];
+    }
     
-    self::$user = (isset($_SESSION['user']))? $_SESSION['user'] : self::resetUser();
-    self::$admin = (isset($_SESSION['admin']))? $_SESSION['admin'] : self::resetAdmin();
-    self::$logout = (isset($_SESSION['logout']))? $_SESSION['logout'] : false;
+    self::$user = $_SESSION[AppConfig::sessionName]['user'];
+    self::$admin = $_SESSION[AppConfig::sessionName]['admin'];
+    self::$logout = $_SESSION[AppConfig::sessionName]['logout'];
   }
   
   /**
@@ -41,9 +50,9 @@ class Sessions
    */
   public static function resetUser()
   {
-    $_SESSION['user'] = new FacebookRSS\Model\User();
-    self::$user = $_SESSION['user'];
-    return $_SESSION['user'];
+    self::$user = new FacebookRSS\Model\User;
+    $_SESSION[AppConfig::sessionName]['user'] = self::$user;
+    return self::$user;
   }
   
   /**
@@ -52,9 +61,9 @@ class Sessions
    */
   public static function resetAdmin()
   {
-    $_SESSION['admin'] = new FacebookRSS\Model\Admin();
-    self::$admin = $_SESSION['admin'];
-    return $_SESSION['admin'];
+    self::$admin = new FacebookRSS\Model\Admin;
+    $_SESSION[AppConfig::sessionName]['admin'] = self::$admin;
+    return self::$admin;
   }
   
   /**
@@ -62,7 +71,7 @@ class Sessions
    */
   public static function closePHPAuth()
   {
-    $_SESSION['logout'] = true;
+    $_SESSION[AppConfig::sessionName]['logout'] = true;
   }
   
   /**
@@ -70,7 +79,7 @@ class Sessions
    */
   public static function resetPHPAuth()
   {
-    $_SESSION['logout'] = false;
+    $_SESSION[AppConfig::sessionName]['logout'] = false;
   }
   
 }

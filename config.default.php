@@ -49,6 +49,8 @@ class AppConfig
   // Developer mode (shows full details of errors).
   const devel = false;
 
+  const sessionName = 'facebookrss';
+
   // Maximum number of posts taken from each Facebook page.
   const maxPageItems = 10;
   // Maximum number of returned RSS items.
