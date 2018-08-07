@@ -9,7 +9,7 @@ Since it is no longer possible to access the Facebook Timeline through the Faceb
 **Why archived:**
 After the incident where Facebook was leaking personal information to the various analytical companies, the Facebook API got severely restricted.
 The apps now need a special permission even if they want to access only the public posts on the pages (Page Public Content Access). For this permission the apps need to pass a thorough review process. 
-As it currently stands, it seems that this is a no go for a personal, non-commercial apps.
+As it currently stands, it seems that this is a no go for personal, non-commercial apps.
 
 
 ## Installation Guide
